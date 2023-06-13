@@ -34,8 +34,11 @@ jobs:
 
       - name: Commit and Push changes
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --global user.email "no-reply@github.com"
+          git config --global user.name "GitHub Action"
           git add .
           git commit -m "Deploy generated files"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push
+        env:
+          GITHUB_TOKEN: $({ secrets.GITHUB_TOKEN })
