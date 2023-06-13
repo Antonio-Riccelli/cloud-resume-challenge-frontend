@@ -26,6 +26,12 @@ jobs:
           npm run build
           npm run export
 
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: generated-files
+          path: ./out          
+
       - name: Commit and Push changes
         run: |
           git config --local user.email "action@github.com"
