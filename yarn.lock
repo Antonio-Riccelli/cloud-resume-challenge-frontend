@@ -93,10 +93,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@next/env@13.4.6-canary.2":
-  version "13.4.6-canary.2"
-  resolved "https://registry.npmjs.org/@next/env/-/env-13.4.6-canary.2.tgz"
-  integrity sha512-1E8CcT30v5pKNQGqfxTJ9exHdXgDZ+w9Vxm2P+OGlaUplQCyC0KldPujXZuUEuFX7/rPBpdd06XYPZcvlMsyJA==
+"@next/env@13.4.5":
+  version "13.4.5"
+  resolved "https://registry.npmjs.org/@next/env/-/env-13.4.5.tgz"
+  integrity sha512-SG/gKH6eij4vwQy87b/3mbpQ1X3x2vUdnpwq6/qL2IQWjtq58EY/UuNAp9CoEZoC9sI4L9AD1r+73Z9r4d3uug==
 
 "@next/eslint-plugin-next@12.2.5":
   version "12.2.5"
@@ -105,10 +105,10 @@
   dependencies:
     glob "7.1.7"
 
-"@next/swc-win32-x64-msvc@13.4.6-canary.2":
-  version "13.4.6-canary.2"
-  resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-13.4.6-canary.2.tgz"
-  integrity sha512-eApIa1yerclvCM3eAqGFNs3qhMVQYQnJmYIOtbWZEgZ1GnKeDrpIMXTasjSWKfTKCSZkHvx3lODj1efGmj9ceg==
+"@next/swc-win32-x64-msvc@13.4.5":
+  version "13.4.5"
+  resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-13.4.5.tgz"
+  integrity sha512-iyNQVc7eGehrik9RJt9xGcnO6b/pi8C7GCfg8RGenx1IlalEKbYRgBJloF7DQzwlrV47E9bQl8swT+JawaNcKA==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -1385,12 +1385,12 @@ natural-compare@^1.4.0:
   resolved "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
-next@^13.4.6-canary.2:
-  version "13.4.6-canary.2"
-  resolved "https://registry.npmjs.org/next/-/next-13.4.6-canary.2.tgz"
-  integrity sha512-UtPXpIIrMu1NANg/DxW19rctgo2/BQ/pSZNhJETaHkHJKRO3ZvGyuANhy0p/+QJek5OyNa0AmNXmycMMP11fvA==
+next@^13.4.5:
+  version "13.4.5"
+  resolved "https://registry.npmjs.org/next/-/next-13.4.5.tgz"
+  integrity sha512-pfNsRLVM9e5Y1/z02VakJRfD6hMQkr24FaN2xc9GbcZDBxoOgiNAViSg5cXwlWCoMhtm4U315D7XYhgOr96Q3Q==
   dependencies:
-    "@next/env" "13.4.6-canary.2"
+    "@next/env" "13.4.5"
     "@swc/helpers" "0.5.1"
     busboy "1.6.0"
     caniuse-lite "^1.0.30001406"
@@ -1399,15 +1399,15 @@ next@^13.4.6-canary.2:
     watchpack "2.4.0"
     zod "3.21.4"
   optionalDependencies:
-    "@next/swc-darwin-arm64" "13.4.6-canary.2"
-    "@next/swc-darwin-x64" "13.4.6-canary.2"
-    "@next/swc-linux-arm64-gnu" "13.4.6-canary.2"
-    "@next/swc-linux-arm64-musl" "13.4.6-canary.2"
-    "@next/swc-linux-x64-gnu" "13.4.6-canary.2"
-    "@next/swc-linux-x64-musl" "13.4.6-canary.2"
-    "@next/swc-win32-arm64-msvc" "13.4.6-canary.2"
-    "@next/swc-win32-ia32-msvc" "13.4.6-canary.2"
-    "@next/swc-win32-x64-msvc" "13.4.6-canary.2"
+    "@next/swc-darwin-arm64" "13.4.5"
+    "@next/swc-darwin-x64" "13.4.5"
+    "@next/swc-linux-arm64-gnu" "13.4.5"
+    "@next/swc-linux-arm64-musl" "13.4.5"
+    "@next/swc-linux-x64-gnu" "13.4.5"
+    "@next/swc-linux-x64-musl" "13.4.5"
+    "@next/swc-win32-arm64-msvc" "13.4.5"
+    "@next/swc-win32-ia32-msvc" "13.4.5"
+    "@next/swc-win32-x64-msvc" "13.4.5"
 
 node-releases@^2.0.8:
   version "2.0.10"
