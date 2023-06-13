@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   build:
@@ -27,7 +24,3 @@ jobs:
       - name: Build Next.js app
         run: |
           npm run build
-
-      - name: Generate static content
-        run: |
-          npm run export
