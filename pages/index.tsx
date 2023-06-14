@@ -384,7 +384,7 @@ const Home: NextPage = () => {
       {/* FOOTER */}
       <footer className={styles.footer}>
         {/* COUNTER */}
-        {/* <section
+        <section
           id="counter"
           className="m-4 flex flex-col border border-solid border-slate-100 bg-white text-center shadow-md shadow-black"
         >
@@ -392,7 +392,7 @@ const Home: NextPage = () => {
             Visitor Counter
           </h2>
           <p className={"w-full p-2 text-center"}>0</p>
-        </section> */}
+        </section>
       </footer>
     </div>
   );
