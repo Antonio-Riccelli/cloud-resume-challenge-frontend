@@ -12,7 +12,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Antonio Riccelli - Resume</title>
         <meta name="description" content="Cloud Resume Challenge" />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/* WRAPPER FOR SIDEBAR AND MAIN */}
