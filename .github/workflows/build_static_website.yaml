@@ -43,6 +43,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build_dir
+          path: out/
       - name: Test artifact download
         run: ls -R
       - name: Commit and Push
