@@ -388,7 +388,7 @@ const Home: NextPage = () => {
           id="counter"
           className="m-4 flex flex-col border border-solid border-slate-100 bg-white text-center shadow-md shadow-black"
         >
-          <h2 className={"w-full bg-yellow-300 p-2 font-black"}>
+          <h2 className={"w-full bg-yellow-400 p-2 font-black"}>
             Visitor Counter
           </h2>
           <p className={"w-full p-2 text-center"}>0</p>
