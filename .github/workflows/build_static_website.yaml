@@ -50,10 +50,12 @@ jobs:
           path: artifacts
       - name: Test artifact download
         run: ls -R
+      - name: create out
+        run: |
+          mkdir -p out
       - name: Commit and Push
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          repository: out/
           push_options: '--force'
 
       # - name: Commit and Push changes
