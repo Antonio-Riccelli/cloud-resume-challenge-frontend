@@ -1,0 +1,68 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+
+      - name: Install dependencies
+        run:  npm install
+
+      - name: Build Next.js app
+        run: |
+          npm run build
+          npm run export
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - name: Copy files to S3 with the AWS CLI
+        run: |
+          aws s3 sync ./out s3://www.antonio-riccelli-cloud-resume.link
+
+  #     - name: Upload artifacts
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: build_dir
+  #         path: out/        
+  # release:
+  #   runs-on: ubuntu-latest
+  #   permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+    #   contents: write
+    # needs: build
+    # steps:
+    #   - name: Checkout main branch
+    #     uses: actions/checkout@v3
+    #     with:
+    #       ref: main
+    #   - name: Download artifact
+    #     uses: actions/download-artifact@v3
+    #     with:
+    #       name: build_dir
+    #       path: artifacts
+    #   - name: Test artifact download
+    #     run: ls -R
+
+    #   - name: Commit and Push
+    #     uses: stefanzweifel/git-auto-commit-action@v4
+    #     with:
+    #       push_options: '--force'
+
+
