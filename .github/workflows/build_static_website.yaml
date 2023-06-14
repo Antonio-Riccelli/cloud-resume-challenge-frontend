@@ -43,13 +43,18 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build_dir
-          path: out/
+          path: artifacts
       - name: Test artifact download
         run: ls -R
+      - name: Move artifacts to out folder
+        run: |
+          mkdir -p out
+          mv artifacts/* out/
       - name: Commit and Push
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git checkout main
           git add .
           git commit -m "Merge artifacts"
           git push
