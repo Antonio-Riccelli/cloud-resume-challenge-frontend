@@ -57,7 +57,7 @@ jobs:
           git checkout main
           git add .
           git commit -m "Merge artifacts"
-          git push
+          git push --force
 
       # - name: Commit and Push changes
       #   run: |
