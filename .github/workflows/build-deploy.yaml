@@ -35,4 +35,4 @@ jobs:
           
       - name: Copy files to S3 with the AWS CLI
         run: |
-          aws s3 sync ./out s3://www.antonio-riccelli-cloud-resume.link
+          aws s3 sync ./out ${{ secrets.AWS_BUCKET_NAME }}
