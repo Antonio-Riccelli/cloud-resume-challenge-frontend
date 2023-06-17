@@ -2,8 +2,39 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Home: NextPage = () => {
+  const [visitorCount, setVisitorCount] = useState(0);
+
+// Update counter value on page load
+// Retrieve updated counter value from API
+useEffect(() => {
+  const retrieveData = async () => {
+    try {
+      const response = await axios.get('https://76ycsxgr5k.execute-api.us-east-1.amazonaws.com/PROD');
+      console.log("Response to retrieving counter value:", response.data.body);
+      setVisitorCount(response.data.body);
+    } catch (error : any) {
+      console.log("Error in retrieving visitor counter value:", error.message);
+    }
+  }
+
+  const postData = async () => {
+    try {
+      const response = await axios.post('https://76ycsxgr5k.execute-api.us-east-1.amazonaws.com/PROD');
+      console.log("Response to updating counter value:", response.data);
+      retrieveData();
+    } catch (error : any) {
+      console.log("Error in updating counter value:", error.message)
+    }
+  }
+
+  postData();
+}, [])
+
+
   return (
     <div
       id="container"
@@ -391,7 +422,7 @@ const Home: NextPage = () => {
           <h2 className={"w-full bg-yellow-400 p-2 font-black"}>
             Visitor Counter
           </h2>
-          <p className={"w-full p-2 text-center"}>0</p>
+          <p className={"w-full p-2 text-center"}>{visitorCount}</p>
         </section>
       </footer>
     </div>
