@@ -25,13 +25,14 @@ useEffect(() => {
     try {
       const response = await axios.post('https://76ycsxgr5k.execute-api.us-east-1.amazonaws.com/PROD');
       console.log("Response to updating counter value:", response.data);
-      retrieveData();
+    
     } catch (error : any) {
       console.log("Error in updating counter value:", error.message)
     }
   }
 
   postData();
+  retrieveData();
 }, [])
 
 
