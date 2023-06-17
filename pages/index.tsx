@@ -15,7 +15,7 @@ useEffect(() => {
     try {
       const response = await axios.get('https://76ycsxgr5k.execute-api.us-east-1.amazonaws.com/PROD');
       console.log("Response to retrieving counter value:", response.data.body);
-      setVisitorCount(response.data.body);
+      setVisitorCount(response.data.body.count);
     } catch (error : any) {
       console.log("Error in retrieving visitor counter value:", error.message);
     }
