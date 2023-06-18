@@ -165,7 +165,7 @@ const Home: NextPage = () => {
         {/* MAIN SECTION */}
         <main
           id="main"
-          className="flex w-full flex-col bg-white pb-10 sm:space-y-10"
+          className="flex w-full flex-col bg-white pb-10 space-y-10"
         >
           {/* HEADER */}
           <header
@@ -261,7 +261,7 @@ const Home: NextPage = () => {
             <h2 className={"border-b-2 border-black pb-2 text-3xl"}>
               Technologies
             </h2>
-            <ul className="grid grid-cols-3 text-base">
+            <ul className="grid grid-cols-2 lg:grid-cols-3 text-base break-words">
               <li>SASS</li>
               <li>TailwindCSS</li>
               <li>JavaScript</li>
