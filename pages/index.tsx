@@ -1,45 +1,52 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Home: NextPage = () => {
   const [visitorCount, setVisitorCount] = useState(0);
 
-// Update counter value on page load
-// Retrieve updated counter value from API
-useEffect(() => {
-  const retrieveData = async () => {
-    try {
-      const response = await axios.get('https://76ycsxgr5k.execute-api.us-east-1.amazonaws.com/PROD');
-      console.log("Response to retrieving counter value:", response.data.body);
-      setVisitorCount(response.data.body.count);
-    } catch (error : any) {
-      console.log("Error in retrieving visitor counter value:", error.message);
-    }
-  }
+  // Update counter value on page load
+  // Retrieve updated counter value from API
+  useEffect(() => {
+    const retrieveData = async () => {
+      try {
+        const response = await axios.get(
+          "https://76ycsxgr5k.execute-api.us-east-1.amazonaws.com/PROD"
+        );
+        console.log(
+          "Response to retrieving counter value:",
+          response.data.body
+        );
+        setVisitorCount(response.data.body.count);
+      } catch (error: any) {
+        console.log(
+          "Error in retrieving visitor counter value:",
+          error.message
+        );
+      }
+    };
 
-  const postData = async () => {
-    try {
-      const response = await axios.post('https://76ycsxgr5k.execute-api.us-east-1.amazonaws.com/PROD');
-      console.log("Response to updating counter value:", response.data);
-    
-    } catch (error : any) {
-      console.log("Error in updating counter value:", error.message)
-    }
-  }
+    const postData = async () => {
+      try {
+        const response = await axios.post(
+          "https://76ycsxgr5k.execute-api.us-east-1.amazonaws.com/PROD"
+        );
+        console.log("Response to updating counter value:", response.data);
+      } catch (error: any) {
+        console.log("Error in updating counter value:", error.message);
+      }
+    };
 
-  postData();
-  retrieveData();
-}, [])
-
+    postData();
+    retrieveData();
+  }, []);
 
   return (
     <div
       id="container"
-      className="flex h-full w-full flex-col items-center bg-neutral-300"
+      className="m-0 flex h-full w-full flex-col items-center justify-center bg-neutral-300"
     >
       <Head>
         <title>Antonio Riccelli - Resume</title>
@@ -48,11 +55,14 @@ useEffect(() => {
       </Head>
 
       {/* WRAPPER FOR SIDEBAR AND MAIN */}
-      <div className="m-5 flex h-full w-6/12 flex-row shadow-2xl shadow-black">
+      <div
+        className="flex h-full flex-col-reverse shadow-2xl shadow-black md:m-5 md:flex-row lg:w-6/12"
+        id="content-wrapper"
+      >
         {/* SIDEBAR */}
         <section
           id="sidebar"
-          className="flex w-2/4 flex-col bg-slate-900 text-white"
+          className="hidden bg-slate-900 text-white sm:flex md:w-2/4 md:flex-col"
         >
           <section id="picture-section" className="relative">
             <Image
@@ -61,25 +71,31 @@ useEffect(() => {
               objectFit={"cover"}
               width={400}
               height={400}
+              className="sm:w-400 sm:h-400 hidden sm:block sm:object-cover"
             />
           </section>
 
-          <div className={"p-5"}>
-            <section id="personal-details-section" className="flex flex-col">
-              <section id="email-section" className="flex flex-col p-2">
+          <div className={"md:p-2 lg:p-5"}>
+            <section
+              id="personal-details-section"
+              className="flex flex-col break-words"
+            >
+              <section id="email-section" className="flex flex-col md:p-2">
                 <div className="contact" id="email">
                   <p className={"bg-yellow-300"}>
                     <span
-                      className={"inline-block w-4/5 bg-slate-700 p-1 text-lg"}
+                      className={
+                        "inline-block bg-slate-700 md:w-4/5 md:p-1 md:text-lg"
+                      }
                     >
                       Email
                     </span>
                   </p>
-                  <p className={"p-1 text-base"}>anton.riccelli@gmail.com</p>
+                  <p className={"text-base md:p-1"}>anton.riccelli@gmail.com</p>
                 </div>
               </section>
 
-              <section id="phone-section" className="flex flex-col p-2">
+              <section id="phone-section" className="flex flex-col md:p-2">
                 <div className="phone" id="phone">
                   <p className={"bg-yellow-300"}>
                     <span className={"block w-4/5 bg-slate-700 p-1 text-lg"}>
@@ -149,13 +165,77 @@ useEffect(() => {
         {/* MAIN SECTION */}
         <main
           id="main"
-          className="flex w-full flex-col space-y-10 bg-white pb-10"
+          className="flex w-full flex-col bg-white pb-10 space-y-10"
         >
           {/* HEADER */}
-          <header id="header" className={"bg-yellow-400 p-10 text-center"}>
-            <h1 className="text-left text-5xl font-bold">Antonio Riccelli</h1>
-            <h2 className="text-3xl">Full Stack Developer</h2>
+          <header
+            id="header"
+            className={
+              "flex flex-col justify-center bg-yellow-400 p-10 pb-5 text-center align-middle sm:pb-10"
+            }
+          >
+            <h1 className="text-center text-5xl font-bold sm:text-left">
+              Antonio Riccelli
+            </h1>
+            <h2 className="text-center text-3xl sm:text-left">
+              Full Stack Developer
+            </h2>
           </header>
+
+          {/* PERSONAL DETAILS SECTION FOR MOBILE ONLY */}
+          <section
+            id="personal-details-section"
+            className="m-0 mx-auto mb-5 flex w-screen flex-col justify-center break-words bg-slate-900 p-0 align-middle text-white sm:hidden md:hidden lg:hidden xl:hidden"
+          >
+            <section id="email-section" className="flex flex-col">
+              <div className="" id="email">
+                <p className={"bg-yellow-300"}>
+                  <span
+                    className={"inline-block w-4/5 bg-slate-700 p-1 text-lg"}
+                  >
+                    Email
+                  </span>
+                </p>
+                <p className={"p-1 text-base"}>anton.riccelli@gmail.com</p>
+              </div>
+            </section>
+
+            <section id="phone-section" className="flex flex-col">
+              <div className="phone" id="phone">
+                <p className={"bg-yellow-300"}>
+                  <span className={"block w-4/5 bg-slate-700 p-1 text-lg"}>
+                    Phone
+                  </span>
+                </p>
+                <p className={"p-1 text-base"}>0000000000</p>
+              </div>
+            </section>
+
+            <section id="address-section" className="flex flex-col py-2">
+              <p className={"bg-yellow-300"}>
+                <span className={"block w-4/5 bg-slate-700 p-1 text-lg"}>
+                  Address
+                </span>
+              </p>
+              <p className={"p-1 text-base"} id="address">
+                Guildford
+              </p>
+            </section>
+
+            <section id="website-section" className="flex flex-col py-2">
+              <p className={"bg-yellow-300"}>
+                <span className={"block w-4/5 bg-slate-700 p-1 text-lg"}>
+                  Website
+                </span>
+              </p>
+              <a
+                className={"p-1 text-base"}
+                href="https://www.antonioriccelli.com"
+              >
+                antonioriccelli.com
+              </a>
+            </section>
+          </section>
 
           <section className="space-y-2 px-20" id="cv-section-summary">
             <h2 className={"border-b-2 border-black pb-2 text-3xl"}>
@@ -181,7 +261,7 @@ useEffect(() => {
             <h2 className={"border-b-2 border-black pb-2 text-3xl"}>
               Technologies
             </h2>
-            <ul className="grid grid-cols-3 text-base">
+            <ul className="grid grid-cols-2 lg:grid-cols-3 text-base break-words">
               <li>SASS</li>
               <li>TailwindCSS</li>
               <li>JavaScript</li>
@@ -410,11 +490,43 @@ useEffect(() => {
               <p>2015 - 2016</p>
             </div>
           </section>
+
+          {/* EDUCATION SECTION FOR MOBILE ONLY */}
+          <section
+            id="education-section"
+            className="mb-5 flex flex-col space-y-2 p-2 px-20 text-base sm:hidden"
+          >
+            <h2
+              className={"border-b-2 border-solid border-b-yellow-400 text-3xl"}
+            >
+              Education
+            </h2>
+            <section
+              className={"border-l-4 border-solid pl-1"}
+              id="education-entry"
+            >
+              <p className="text-lg font-bold">
+                Full Stack Development Bootcamp
+              </p>
+              <p className={"text-base"}>School of Code</p>
+              <p className={"text-base"}>2021 - 2022</p>
+            </section>
+            <section
+              id="education-entry"
+              className="border-l-4 border-solid pl-1"
+            >
+              <p className={"text-lg font-bold"}>
+                Bachelor&apos;s Degree in Foreign Languages and Literatures
+              </p>
+              <p className={"text-base"}>Naples Eastern University</p>
+              <p className={"text-base"}>2011 - 2015</p>
+            </section>
+          </section>
         </main>
       </div>
 
       {/* FOOTER */}
-      <footer className={styles.footer}>
+      <footer className="inline-block">
         {/* COUNTER */}
         <section
           id="counter"
