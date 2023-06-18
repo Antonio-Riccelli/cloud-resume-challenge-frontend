@@ -39,8 +39,8 @@ const Home: NextPage = () => {
       }
     };
 
-    // postData();
-    // retrieveData();
+    postData();
+    retrieveData();
   }, []);
 
   return (
