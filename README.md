@@ -15,3 +15,4 @@ The page also includes a visitor counter which updates at every visit. Its value
 - CloudFront Distribution to serve content to end users
 - Custom DNS domain name provided via Route53
 
+![demo6](https://github.com/Antonio-Riccelli/cloud-resume-challenge-frontend/assets/39813213/3650fad1-5988-40ec-ab2e-71a5432a1aab)
