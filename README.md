@@ -7,7 +7,7 @@ This repo contains the current Frontend code for the [Cloud Resume Challenge](ht
 A resume page built using Next.js and TailwindCSS. 
 The page also includes a visitor counter which updates at every visit. Its value is stored in a DynamoDB table and dynamically retrieved via API Gateway and Lambda. 
 
-## Frontend Architecture
+## Architecture
 
 - Resume page created with Next.js and TailwindCSS.
 - GitHub Action workflow runs the build process, exports the static content and automatically uploads it to AWS.
