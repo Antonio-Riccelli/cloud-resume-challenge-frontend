@@ -15,3 +15,8 @@ The page also includes a visitor counter which updates at every visit. Its value
 - CloudFront Distribution to serve content to end users
 - Custom DNS domain name provided via Route53
 
+
+## Usage
+
+You can check the resume page at [antonio-riccelli-cloud-resume.link]([antonio-riccelli-cloud-resume.link/](https://www.antonio-riccelli-cloud-resume.link/))
+
